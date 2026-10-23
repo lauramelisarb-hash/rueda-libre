@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | Rueda Libre</title>
+</head>
+
+<body>
+
+    <header>
+        <a href="../index.html">
+            <img src="../img/Logo.jpeg" alt="Logo Rueda Libre" width="120">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="tarifas.html">Tarifas y rutas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Reserva tu bicicleta</h1>
+
+        <p>¿Estás listo para recorrer Medellín sobre dos ruedas? Asegura tu equipo o aparta tu cupo para nuestros tours
+            guiados completando tu solicitud.</p>
+
+
+        <section>
+            <h2>Horario de Atención</h2>
+            <dl>
+                <dt>Lunes a Viernes</dt>
+                <dd>7:00 AM – 7:00 PM</dd>
+
+                <dt>Sábados y Domingos</dt>
+                <dd>6:00 AM – 2:00 PM</dd>
+            </dl>
+        </section>
+
+        <form action="">
+            <fieldset>
+                <legend>Tus datos</legend>
+                <p>
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" required minlength="3">
+                </p>
+                <p>
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="@" required>
+                </p>
+
+                <p>
+                    <label for="telefono">Celular</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}"
+                        title="Escribe 10 numeros, sin espacios">
+                </p>
+
+            </fieldset>
+            <legend>Reserva</legend>
+            <p>
+                <label for="tipo">Tipo de servicio</label>
+                <select name="tipo" id="tipo" required>
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="alquiler">Alquiler de bicicleta</option>
+                    <option value="tour">Tour guiado</option>
+                </select>
+            </p>
+            <p>
+                <label for="fecha">Fecha de reserva</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </p>
+            <p>
+                <label for="hora">Hora de reserva</label>
+                <input type="time" id="hora" name="hora" required>
+            </p>
+            <p>
+                <label for="cantidad">Cantidad de personas</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" max="10" required>
+            </p>
+            <p>
+                <label for="comentarios">Comentarios adicionales</label>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="50"
+                    placeholder="Escribe aquí cualquier detalle adicional sobre tu reserva"></textarea>
+            </p>
+            <fieldset>
+                <legend>Confirmación</legend>
+                <p>
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los términos y condiciones</label>
+                </p>
+                <p>
+                    <button type="submit">Enviar reserva</button>
+                </p>
+            </fieldset>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>Rueda Libre 2026 | Correo: <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></p>
+    </footer>
+
+
+</body>
+
+</html>
