@@ -42,64 +42,208 @@
             </dl>
         </section>
 
-        <form action="">
-            <fieldset>
-                <legend>Tus datos</legend>
-                <p>
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" required minlength="3">
-                </p>
-                <p>
-                    <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" name="@" required>
-                </p>
+       <form action="#" method="post">
 
-                <p>
-                    <label for="telefono">Celular</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}"
-                        title="Escribe 10 numeros, sin espacios">
-                </p>
+    <h2>Reserva tu experiencia</h2>
+    <p>Completa el formulario para reservar tu bicicleta o recorrido guiado.</p>
 
-            </fieldset>
-            <legend>Reserva</legend>
-            <p>
-                <label for="tipo">Tipo de servicio</label>
-                <select name="tipo" id="tipo" required>
-                    <option value="">-- Selecciona una opción --</option>
-                    <option value="alquiler">Alquiler de bicicleta</option>
-                    <option value="tour">Tour guiado</option>
-                    <option value="evento">Recorrido guiado</option>
-                </select>
-            </p>
-            <p>
-                <label for="fecha">Fecha de reserva</label>
-                <input type="date" id="fecha" name="fecha" required>
-            </p>
-            <p>
-                <label for="hora">Hora de reserva</label>
-                <input type="time" id="hora" name="hora" required>
-            </p>
-            <p>
-                <label for="cantidad">Cantidad de personas</label>
-                <input type="number" id="cantidad" name="cantidad" min="1" max="10" required>
-            </p>
-            <p>
-                <label for="comentarios">Comentarios adicionales</label>
-                <textarea id="comentarios" name="comentarios" rows="4" cols="50"
-                    placeholder="Escribe aquí cualquier detalle adicional sobre tu reserva"></textarea>
-            </p>
-            <fieldset>
-                <legend>Confirmación</legend>
-                <p>
-                    <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos">Acepto los términos y condiciones</label>
-                </p>
-                <p>
-                    <button type="submit">Enviar reserva</button>
-                </p>
-            </fieldset>
+    <!-- DATOS PERSONALES -->
+    <fieldset>
+        <legend>1. Tus datos personales</legend>
 
-        </form>
+        <p>
+            <label for="nombre">Nombre completo:</label><br>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                minlength="3"
+                maxlength="100"
+                autocomplete="name"
+            >
+        </p>
+
+        <p>
+            <label for="correo">Correo electrónico:</label><br>
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                required
+                autocomplete="email"
+            >
+        </p>
+
+        <p>
+            <label for="telefono">Número de celular:</label><br>
+            <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                pattern="[0-9]{10}"
+                title="Escribe 10 números sin espacios"
+                required
+                autocomplete="tel"
+            >
+        </p>
+    </fieldset>
+
+    <!-- ALQUILER DE BICICLETAS -->
+    <fieldset>
+        <legend>2. Tipo de bicicletas</legend>
+
+        <p>Selecciona el tipo de bicicleta:</p>
+
+        <select id="tipo_bicicleta" name="tipo_bicicleta">
+            <option value="">-- Selecciona una bicicleta --</option>
+            <option value="urbana">Urbana</option>
+            <option value="montana">Montaña</option>
+            <option value="electrica">Eléctrica</option>
+            <option value="N/A">No aplica</option>
+        </select>
+
+        <p>Selecciona la duración del alquiler:</p>
+
+        <select id="duracion_alquiler" name="duracion_alquiler">
+            <option value="">-- Selecciona la duración --</option>
+            <option value="1_hora">1 hora</option>
+            <option value="medio_dia">Medio día (4 horas)</option>
+            <option value="dia_completo">Día completo</option>
+        </select>
+
+        <p>
+            <label for="cantidad_bicicletas">
+                Cantidad de bicicletas:
+            </label><br>
+
+            <input
+                type="number"
+                id="cantidad_bicicletas"
+                name="cantidad_bicicletas"
+                min="0"
+                max="10"
+                value="1"
+            >
+        </p>
+    </fieldset>
+
+
+    <!-- RECORRIDOS GUIADOS -->
+    <fieldset>
+        <legend>3. Recorridos guiados</legend>
+
+        <p>Selecciona el recorrido que deseas realizar:</p>
+
+        <select id="tipo_recorrido" name="tipo_recorrido">
+
+            <option value="">-- Selecciona una ruta --</option>
+
+            <option value="rio_parques">
+                Río y Parques - 12 km - 2 horas - Fácil - $45.000
+            </option>
+
+            <option value="sabores_barrio">
+                Sabores de Barrio - 18 km - 3 horas - Medio - $60.000
+            </option>
+
+            <option value="reto_las_palmas">
+                Reto Las Palmas - 25 km - 4 horas - Difícil - $85.000
+            </option>
+             <option value="N/A">No aplica</option>
+
+        </select>
+
+        <p>
+            <label for="cantidad_personas">
+                Cantidad de personas:
+            </label><br>
+
+            <input
+                type="number"
+                id="cantidad_personas"
+                name="cantidad_personas"
+                min="0"
+                max="10"
+                value="1"
+            >
+        </p>
+    </fieldset>
+
+
+    <!-- FECHA Y HORA -->
+    <fieldset>
+        <legend>4. Fecha y hora de la reserva</legend>
+
+        <p>
+            <label for="fecha">Fecha de reserva:</label><br>
+
+            <input
+                type="date"
+                id="fecha"
+                name="fecha"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="hora">Hora de inicio:</label><br>
+
+            <input
+                type="time"
+                id="hora"
+                name="hora"
+                required
+            >
+        </p>
+    </fieldset>
+
+
+    <!-- INFORMACIÓN ADICIONAL -->
+    <fieldset>
+        <legend>5. Información adicional</legend>
+
+        <p>
+            <label for="comentarios">
+                Comentarios o solicitudes especiales:
+            </label><br>
+
+            <textarea
+                id="comentarios"
+                name="comentarios"
+                rows="4"
+                cols="40"
+                maxlength="500"
+                placeholder="Escribe aquí tus comentarios..."
+            ></textarea>
+        </p>
+    </fieldset>
+
+
+    <!-- CONFIRMACIÓN -->
+    <fieldset>
+        <legend>6. Confirmación de la reserva</legend>
+
+        <p>
+            <input
+                type="checkbox"
+                id="terminos"
+                name="terminos"
+                value="aceptados"
+                required
+            >
+
+            <label for="terminos">
+                Acepto los términos y condiciones de la reserva.
+            </label>
+        </p>
+
+        <p>
+            <button type="submit">Enviar reserva</button>
+        </p>
+    </fieldset>
+
+</form>
 
     </main>
 
