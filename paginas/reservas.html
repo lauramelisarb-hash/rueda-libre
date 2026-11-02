@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas | Rueda Libre</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Formulario de reserva para alquiler de bicicletas y recorridos guiados en Rueda Libre.">
+    <title>Reserva tu bicicleta | Rueda Libre</title>
+    <link rel="stylesheet" href="../css/style2.css">
 </head>
 
 <body>
@@ -27,230 +28,127 @@
     <main>
         <h1>Reserva tu bicicleta</h1>
 
-        <p>¿Estás listo para recorrer Medellín sobre dos ruedas? Asegura tu equipo o aparta tu cupo para nuestros tours
-            guiados completando tu solicitud.</p>
-
+        <p>¿Estás listo para recorrer Medellín sobre dos ruedas? Completa el siguiente formulario para asegurar tu equipo o cupo.</p>
 
         <section>
             <h2>Horario de Atención</h2>
             <dl>
-                <dt>Lunes a Viernes</dt>
-                <dd>7:00 AM – 7:00 PM</dd>
+                <dt>Lunes a viernes</dt>
+                <dd>7:00 a. m. a 7:00 p. m.</dd>
 
-                <dt>Sábados y Domingos</dt>
-                <dd>6:00 AM – 2:00 PM</dd>
+                <dt>Sábados, domingos y festivos</dt>
+                <dd>6:00 a. m. a 2:00 p. m.</dd>
             </dl>
         </section>
 
-       <form action="#" method="post">
+        <!-- SECCIÓN FORMULARIO DE RESERVA -->
+        <section id="formulario-reserva">
+            <h2>Formulario de reserva</h2>
+            <form action="#" method="post">
 
-    <h2>Reserva tu experiencia</h2>
-    <p>Completa el formulario para reservar tu bicicleta o recorrido guiado.</p>
+            
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    
+                    <p>
+                        <label for="nombre">Nombre completo:</label><br>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre y apellido">
+                    </p>
 
-    <!-- DATOS PERSONALES -->
-    <fieldset>
-        <legend>1. Tus datos personales</legend>
+                    <p>
+                        <label for="correo">Correo electrónico:</label><br>
+                        <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+                    </p>
 
-        <p>
-            <label for="nombre">Nombre completo:</label><br>
-            <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                required
-                minlength="3"
-                maxlength="100"
-                autocomplete="name"
-            >
-        </p>
+                    <p>
+                        <label for="telefono">Número de celular:</label><br>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="3001234567">
+                    </p>
+                </fieldset>
 
-        <p>
-            <label for="correo">Correo electrónico:</label><br>
-            <input
-                type="email"
-                id="correo"
-                name="correo"
-                required
-                autocomplete="email"
-            >
-        </p>
+                
+                <fieldset>
+                    <legend>Tu alquiler</legend>
 
-        <p>
-            <label for="telefono">Número de celular:</label><br>
-            <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                pattern="[0-9]{10}"
-                title="Escribe 10 números sin espacios"
-                required
-                autocomplete="tel"
-            >
-        </p>
-    </fieldset>
+                    <p>Selecciona el tipo de servicio:</p>
+                    <p>
+                        <input type="radio" id="servicio_alquiler" name="tipo_servicio" value="alquiler" checked>
+                        <label for="servicio_alquiler">Alquiler de bicicleta</label>
+                        
+                        <input type="radio" id="servicio_recorrido" name="tipo_servicio" value="recorrido">
+                        <label for="servicio_recorrido">Recorrido guiado</label>
+                    </p>
 
-    <!-- ALQUILER DE BICICLETAS -->
-    <fieldset>
-        <legend>2. Tipo de bicicletas</legend>
+                    <p>
+                        <label for="opcion_alquiler">Opciones de Alquiler (Tipo y Duración):</label><br>
+                        <select id="opcion_alquiler" name="opcion_alquiler">
+                            <option value="">-- Selecciona tarifa de alquiler --</option>
+                            <optgroup label="Urbana">
+                                <option value="urbana_1h">Urbana - 1 hora ($10.000)</option>
+                                <option value="urbana_4h">Urbana - Medio día / 4 h ($30.000)</option>
+                                <option value="urbana_dia">Urbana - Día completo ($50.000)</option>
+                            </optgroup>
+                            <optgroup label="Montaña">
+                                <option value="montana_1h">Montaña - 1 hora ($15.000)</option>
+                                <option value="montana_4h">Montaña - Medio día / 4 h ($45.000)</option>
+                                <option value="montana_dia">Montaña - Día completo ($70.000)</option>
+                            </optgroup>
+                            <optgroup label="Eléctrica">
+                                <option value="electrica_1h">Eléctrica - 1 hora ($25.000)</option>
+                                <option value="electrica_4h">Eléctrica - Medio día / 4 h ($70.000)</option>
+                                <option value="electrica_dia">Eléctrica - Día completo ($110.000)</option>
+                            </optgroup>
+                        </select>
+                    </p>
 
-        <p>Selecciona el tipo de bicicleta:</p>
+                    <p>
+                        <label for="tipo_recorrido">O Recorridos Guiados:</label><br>
+                        <select id="tipo_recorrido" name="tipo_recorrido">
+                            <option value="">-- Selecciona un recorrido guiado --</option>
+                            <option value="rio_parques">Río y Parques (12 km, 2 h, Fácil) - $45.000</option>
+                            <option value="sabores_barrio">Sabores de Barrio (18 km, 3 h, Medio) - $60.000</option>
+                            <option value="reto_las_palmas">Reto Las Palmas (25 km, 4 h, Difícil) - $85.000</option>
+                        </select>
+                    </p>
 
-        <select id="tipo_bicicleta" name="tipo_bicicleta">
-            <option value="">-- Selecciona una bicicleta --</option>
-            <option value="urbana">Urbana</option>
-            <option value="montana">Montaña</option>
-            <option value="electrica">Eléctrica</option>
-            <option value="N/A">No aplica</option>
-        </select>
+                    <p>
+                        <label for="fecha">Fecha de la reserva:</label><br>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </p>
 
-        <p>Selecciona la duración del alquiler:</p>
+                    <p>
+                        <label for="cantidad">Cantidad de bicicletas o personas:</label><br>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
+                    </p>
 
-        <select id="duracion_alquiler" name="duracion_alquiler">
-            <option value="">-- Selecciona la duración --</option>
-            <option value="1_hora">1 hora</option>
-            <option value="medio_dia">Medio día (4 horas)</option>
-            <option value="dia_completo">Día completo</option>
-        </select>
+                    <p>
+                        <label for="comentarios">Comentarios adicionales o solicitudes especiales:</label><br>
+                        <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escribe aquí detalles adicionales..."></textarea>
+                    </p>
+                </fieldset>
 
-        <p>
-            <label for="cantidad_bicicletas">
-                Cantidad de bicicletas:
-            </label><br>
+                
+                <fieldset>
+                    <legend>Confirmación</legend>
 
-            <input
-                type="number"
-                id="cantidad_bicicletas"
-                name="cantidad_bicicletas"
-                min="0"
-                max="10"
-                value="1"
-            >
-        </p>
-    </fieldset>
+                    <p>
+                        <input type="checkbox" id="terminos" name="terminos" value="aceptados" required>
+                        <label for="terminos">Acepto los términos, condiciones y políticas de seguridad (incluye casco y candado).</label>
+                    </p>
 
+                    <p>
+                        <button type="submit" name="enviar_reserva">Enviar reserva</button>
+                    </p>
+                </fieldset>
 
-    <!-- RECORRIDOS GUIADOS -->
-    <fieldset>
-        <legend>3. Recorridos guiados</legend>
-
-        <p>Selecciona el recorrido que deseas realizar:</p>
-
-        <select id="tipo_recorrido" name="tipo_recorrido">
-
-            <option value="">-- Selecciona una ruta --</option>
-
-            <option value="rio_parques">
-                Río y Parques - 12 km - 2 horas - Fácil - $45.000
-            </option>
-
-            <option value="sabores_barrio">
-                Sabores de Barrio - 18 km - 3 horas - Medio - $60.000
-            </option>
-
-            <option value="reto_las_palmas">
-                Reto Las Palmas - 25 km - 4 horas - Difícil - $85.000
-            </option>
-             <option value="N/A">No aplica</option>
-
-        </select>
-
-        <p>
-            <label for="cantidad_personas">
-                Cantidad de personas:
-            </label><br>
-
-            <input
-                type="number"
-                id="cantidad_personas"
-                name="cantidad_personas"
-                min="0"
-                max="10"
-                value="1"
-            >
-        </p>
-    </fieldset>
-
-
-    <!-- FECHA Y HORA -->
-    <fieldset>
-        <legend>4. Fecha y hora de la reserva</legend>
-
-        <p>
-            <label for="fecha">Fecha de reserva:</label><br>
-
-            <input
-                type="date"
-                id="fecha"
-                name="fecha"
-                required
-            >
-        </p>
-
-        <p>
-            <label for="hora">Hora de inicio:</label><br>
-
-            <input
-                type="time"
-                id="hora"
-                name="hora"
-                required
-            >
-        </p>
-    </fieldset>
-
-
-    <!-- INFORMACIÓN ADICIONAL -->
-    <fieldset>
-        <legend>5. Información adicional</legend>
-
-        <p>
-            <label for="comentarios">
-                Comentarios o solicitudes especiales:
-            </label><br>
-
-            <textarea
-                id="comentarios"
-                name="comentarios"
-                rows="4"
-                cols="40"
-                maxlength="500"
-                placeholder="Escribe aquí tus comentarios..."
-            ></textarea>
-        </p>
-    </fieldset>
-
-
-    <!-- CONFIRMACIÓN -->
-    <fieldset>
-        <legend>6. Confirmación de la reserva</legend>
-
-        <p>
-            <input
-                type="checkbox"
-                id="terminos"
-                name="terminos"
-                value="aceptados"
-                required
-            >
-
-            <label for="terminos">
-                Acepto los términos y condiciones de la reserva.
-            </label>
-        </p>
-
-        <p>
-            <button type="submit">Enviar reserva</button>
-        </p>
-    </fieldset>
-
-</form>
+            </form>
+        </section>
 
     </main>
 
     <footer>
-        <p>Rueda Libre 2026 | Correo: <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></p>
+        <p>Rueda Libre - <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a> - 2026</p>
     </footer>
-
 
 </body>
 

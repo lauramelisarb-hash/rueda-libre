@@ -1,0 +1,270 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FAF6EF; /* Crema (Fondo general) */
+    color: #5B6470; /* Gris Asfalto (Texto secundario) */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #14213D; /* Azul Noche */
+    color: #FAF6EF;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FAF6EF;
+    margin: 0;
+}
+
+header img {
+    border-radius: 4px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #FAF6EF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #F39A2B;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h1, h2, h3 {
+    color: #14213D; /* Azul Noche para títulos */
+}
+
+a {
+    color: #1E7A4F; /* Verde Ruta */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #F39A2B; /* Naranja Pedal al pasar el mouse */
+    text-decoration: underline;
+}
+
+.container-claro {
+    background-color: #FAF6EF;
+    color: #14213D;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.container-oscuro {
+    background-color: #14213D;
+    color: #FAF6EF;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.container-oscuro h1, 
+.container-oscuro h2, 
+.container-oscuro h3, 
+.container-oscuro p {
+    color: #FAF6EF;
+}
+
+.container-oscuro a {
+    color: #F39A2B; /* Naranja Pedal para enlaces en fondos oscuros */
+}
+
+/* ==========================================
+   ESTILOS DE LA SECCIÓN "NUESTRA FLOTA" (GRID)
+   ========================================== */
+.grid-flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem; /* Separación uniforme entre filas y columnas */
+    margin-top: 1.5rem;
+}
+
+/* Estilo y Box Model de cada tarjeta (artículo) con Flexbox */
+.tarjeta-bici {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el enlace de reservar siempre al final */
+    background-color: #ffffff;
+    border: 1px solid #d1cbbd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta-bici img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Títulos y textos de la tarjeta */
+.tarjeta-bici h3 {
+    color: #14213D; /* Azul Noche */
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-bici p {
+    color: #5B6470; /* Gris Asfalto */
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Permite que el texto ocupe el espacio de forma flexible */
+}
+
+/* Estilo del precio */
+.tarjeta-bici .precio {
+    font-weight: bold;
+    color: #1E7A4F; /* Verde Ruta */
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-bici .unidad {
+    font-size: 0.85rem;
+    font-weight: normal;
+    color: #5B6470;
+}
+
+/* Botón / Enlace "Reservar" alineado al final */
+.tarjeta-bici .btn-reservar {
+    display: block;
+    background-color: #1E7A4F; /* Verde Ruta */
+    color: #FAF6EF; /* Crema */
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tarjeta-bici .btn-reservar:hover {
+    background-color: #F39A2B; /* Naranja Pedal */
+    color: #14213D;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background-color: #ffffff;
+    color: #5B6470;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #14213D;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #d1cbbd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #14213D; /* Azul Noche */
+    color: #FAF6EF;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #FAF6EF;
+}
+
+fieldset {
+    border: 2px solid #1E7A4F; /* Verde Ruta */
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+}
+
+legend {
+    font-weight: bold;
+    color: #14213D;
+    background-color: #F39A2B; /* Naranja Pedal */
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #5B6470;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #1E7A4F; /* Verde Ruta para botones principales */
+    color: #FAF6EF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #F39A2B; /* Naranja Pedal al pasar el mouse */
+    color: #14213D;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #14213D; /* Azul Noche */
+    color: #FAF6EF;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #F39A2B; /* Naranja Pedal */
+    text-decoration: underline;
+}
